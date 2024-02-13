@@ -58,7 +58,7 @@
     <div class="app-container  header-container" id="ipix_app_header_container">
         <nav class="navbar navbar-full navbar-expand-lg container-large">
             <div class="container-fluid p-0">
-            <a class="navbar-brand dark-logo" href=" /index.html"> <img alt="" src=" <?php bloginfo('template_directory'); ?> /images/web/images/logo.png" /></a>
+            <a class="navbar-brand dark-logo" href=" /index.php"> <img alt="" src=" <?php bloginfo('template_directory'); ?> /images/web/images/logo.png" /></a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     

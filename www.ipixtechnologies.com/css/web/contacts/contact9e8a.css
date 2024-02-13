@@ -1,0 +1,348 @@
+/**
+ * Owl Carousel v2.2.1
+ * Copyright 2013-2017 Saurabh Sharma
+ * Licensed under  ()
+ */
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */ }
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-wrapper,
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; }
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%; }
+  .owl-carousel .owl-nav.disabled,
+  .owl-carousel .owl-dots.disabled {
+    display: none; }
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-loaded {
+    display: block; }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block; }
+  .owl-carousel.owl-hidden {
+    opacity: 0; }
+  .owl-carousel.owl-refresh .owl-item {
+    visibility: hidden; }
+  .owl-carousel.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab; }
+  .owl-carousel.owl-rtl {
+    direction: rtl; }
+  .owl-carousel.owl-rtl .owl-item {
+    float: right; }
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; }
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; }
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out; }
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d; }
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000; }
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url(../../../images/vendor/owl.carousel2/dist/owl.video.playc1fa.png?7f01b07148f205f6e8258e92bbf652d9) no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease; }
+
+.owl-carousel .owl-video-play-icon:hover {
+  transform: scale(1.3, 1.3); }
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none; }
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%; }
+
+body {
+  background: #FAFAFD;
+}
+
+#contact_page_section .contact-form-area {
+  padding-right: 80px;
+}
+#contact_page_section .contact-form-area h1 {
+  font-size: 40px;
+}
+#contact_page_section .contact-form-area .contact-form h3 {
+  font-size: 21px;
+  margin: 20px 0;
+}
+#contact_page_section .contact-form-area .contact-form .contact-input {
+  border: none;
+  border-radius: 5px;
+  background-color: #F1F1F6;
+  font-size: 14px;
+  width: 100%;
+  color: #5D6F8A !important;
+  padding: 16px;
+}
+#contact_page_section .contact-form-area .contact-form .contact-input:focus {
+  outline: none;
+}
+#contact_page_section .contact-form-area .contact-form textarea {
+  height: 130px;
+}
+#contact_page_section .contact-form-area .home-btn button:hover img {
+  transform: translateX(75px) !important;
+}
+#contact_page_section .lets-talk-looking-for-products h5 {
+  font-size: 14px;
+  margin: 9px 0;
+}
+#contact_page_section .lets-talk-looking-for-products button {
+  padding: 5px 9px;
+  border-radius: 6px;
+  background-color: #F1F1F6;
+  border: none;
+  margin: 5px;
+  font-size: 13px;
+}
+#contact_page_section .lets-talk-looking-for-products button:hover {
+  background-color: #e6e6e7;
+}
+#contact_page_section .lets-talk-looking-for-products button.active {
+  background-color: #897ADA;
+  color: #FFF;
+}
+#contact_page_section .contact-address-area h3 {
+  font-size: 21px;
+  margin: 15px 0;
+}
+#contact_page_section .contact-address-area ul {
+  padding: 0;
+}
+#contact_page_section .contact-address-area ul h3 {
+  font-size: 21px;
+  margin: 15px 0;
+}
+#contact_page_section .contact-address-area ul h5 {
+  font-size: 16px;
+}
+#contact_page_section .contact-address-area ul li {
+  line-height: 22px;
+  color: #5D6F8A;
+  font-size: 14px;
+  list-style-type: none;
+}
+#contact_page_section .contact-address-area ul .highlight-text li {
+  transition: 0.2s;
+}
+#contact_page_section .contact-address-area ul .highlight-text:hover li {
+  color: #fe7826 !important;
+}
+#contact_page_section .contact-form-area .country-list .mobile-number {
+  padding-left: 95px;
+}
+#contact_page_section .contact-form-area .country-list .ms-dd .ms-dd-option-image,
+#contact_page_section .contact-form-area .country-list .ms-dd .ms-dd-selected-img {
+  max-width: 20px;
+}
+#contact_page_section .contact-form-area .country-list .country-code {
+  position: absolute;
+  top: 45px;
+}
+#contact_page_section .contact-form-area .country-list .ms-dd.ms-pr {
+  width: 100px;
+}
+#contact_page_section .contact-form-area .country-list ul.ms-options {
+  height: 300px;
+}
+#contact_page_section .contact-form-area .country-list .ms-dd .ms-dd-header a {
+  height: 53px;
+  border: none;
+  background: #f1f1f6;
+}
+#contact_page_section .contact-form-area .country-list .ms-dd .ms-dd-header {
+  border: none;
+}
+#contact_page_section .contact-form-area .country-list span.ms-header-middle-content {
+  position: relative;
+  top: 6px;
+}
+
+#thank_you_page_section .thank-you-contents i {
+  font-size: 36px;
+  color: #fe7826;
+}
+#thank_you_page_section .home-btn button:hover img {
+  transform: translateX(135px) !important;
+}
+
+@media screen and (max-width: 1600px) {
+  .contact-form-area .country-code {
+    top: 39px !important;
+  }
+  h1 {
+    font-size: 30px !important;
+  }
+  .contact-form h3 {
+    font-size: 20px !important;
+    margin: 15px 0 !important;
+  }
+}
+@media screen and (max-width: 1440px) {
+  #contact_page_section .contact-form-area .home-btn button:hover img {
+    transform: translateX(65px) !important;
+  }
+  #thank_you_page_section .home-btn button:hover img {
+    transform: translateX(120px) !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contact-form-area {
+    padding-right: 60px !important;
+  }
+  .contact-form-area .country-code {
+    top: 36px !important;
+  }
+  .contact-form h3 {
+    font-size: 18px !important;
+    margin: 15px 0 !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  #contact_page_section .contact-form-area .contact-form textarea {
+    height: 90px;
+  }
+  #thank_you_page_section .home-btn button:hover img {
+    transform: translateX(114px) !important;
+  }
+  .contact-form-area .ms-dd .ms-dd-header a {
+    height: 40px !important;
+    padding-top: 5px !important;
+  }
+  .contact-form-area {
+    padding-right: 0 !important;
+  }
+  .contact-form-area h1 {
+    font-size: 24px !important;
+  }
+  .contact-form h3 {
+    font-size: 16px !important;
+    margin: 15px 0 !important;
+  }
+  .contact-address-area ul h3 {
+    font-size: 17px !important;
+  }
+  .contact-input {
+    padding: 10px !important;
+    border-radius: 4px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact-form-area h1 {
+    font-size: 20px !important;
+  }
+}

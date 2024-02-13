@@ -1,0 +1,392 @@
+/**
+ * Owl Carousel v2.2.1
+ * Copyright 2013-2017 Saurabh Sharma
+ * Licensed under  ()
+ */
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */ }
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-wrapper,
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; }
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%; }
+  .owl-carousel .owl-nav.disabled,
+  .owl-carousel .owl-dots.disabled {
+    display: none; }
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-loaded {
+    display: block; }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block; }
+  .owl-carousel.owl-hidden {
+    opacity: 0; }
+  .owl-carousel.owl-refresh .owl-item {
+    visibility: hidden; }
+  .owl-carousel.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab; }
+  .owl-carousel.owl-rtl {
+    direction: rtl; }
+  .owl-carousel.owl-rtl .owl-item {
+    float: right; }
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; }
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; }
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out; }
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d; }
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000; }
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url(../../../images/vendor/owl.carousel2/dist/owl.video.playc1fa.png?7f01b07148f205f6e8258e92bbf652d9) no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease; }
+
+.owl-carousel .owl-video-play-icon:hover {
+  transform: scale(1.3, 1.3); }
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none; }
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%; }
+
+body {
+  background: #F5F5F5;
+}
+
+#web_application_page_section .home-btn {
+  justify-content: center;
+  margin-top: 25px;
+}
+#web_application_page_section .home-btn .product-banner-btn {
+  align-items: center;
+  margin-left: 15px;
+  color: #000;
+}
+
+#about_web_application_section .about-web-application {
+  padding: 40px;
+  border-radius: 25px;
+  background: #897ADA;
+}
+#about_web_application_section .about-web-application .web-application-about-contents h2 {
+  line-height: 48px;
+  color: #fff;
+}
+#about_web_application_section .about-web-application .web-application-about-contents p {
+  line-height: 31px;
+  color: #fff;
+}
+#about_web_application_section .about-web-application .about-web-application-image img {
+  max-width: 100%;
+}
+
+#why_web_application_section {
+  margin-bottom: 100px;
+}
+#why_web_application_section .why-web-application-image img {
+  max-width: 100%;
+}
+#why_web_application_section .why-web-application-contents h2 {
+  line-height: 52px;
+}
+#why_web_application_section .why-web-application-contents p {
+  line-height: 31px;
+}
+
+#web_application_features_section .web-application-features .item img {
+  width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 10px;
+}
+#web_application_features_section .web-application-features .item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+#web_application_features_section .web-application-features .item p {
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+#web_application_features_section .web-application-features .owl-nav {
+  display: flex;
+  float: right;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  top: -62px;
+  right: 0;
+}
+#web_application_features_section .web-application-features .owl-nav .owl-prev {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 7px;
+  margin-right: 5px;
+  transition: 0.2s;
+}
+#web_application_features_section .web-application-features .owl-nav .owl-prev:hover {
+  padding-left: 20px;
+  box-shadow: -2px 1px 6px -1px rgba(0, 0, 0, 0.4196078431);
+}
+#web_application_features_section .web-application-features .owl-nav .owl-next {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 7px;
+  margin-left: 5px;
+  transition: 0.2s;
+}
+#web_application_features_section .web-application-features .owl-nav .owl-next:hover {
+  padding-right: 20px;
+  box-shadow: 2px 1px 6px -1px rgba(0, 0, 0, 0.4196078431);
+}
+
+#our_development_methodology_section .development-methodoogy-contents .development-methodoogy-box {
+  border: 2px solid #000;
+  padding: 20px;
+  min-height: 200px;
+}
+#our_development_methodology_section .development-methodoogy-contents .development-methodoogy-box h3 {
+  font-size: 18px;
+  position: relative;
+  top: -15px;
+  background: #f5f5f5;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 19px;
+}
+#our_development_methodology_section .development-methodoogy-contents .development-methodoogy-box p {
+  line-height: 23px;
+  margin: 0;
+}
+
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs .nav-link.active,
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs .nav-item.show .nav-link {
+  background: none;
+  border: none;
+}
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs .nav-link:hover,
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs .nav-link:focus {
+  border-color: transparent;
+}
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs {
+  justify-content: space-between;
+}
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs .owl-carousel .owl-stage {
+  border-bottom: 1px solid #07162D;
+  margin-bottom: 5px;
+}
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs button {
+  position: relative;
+}
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-tabs .nav-link {
+  font-weight: 600;
+  color: #07162D;
+  margin: auto;
+  padding-bottom: 25px;
+  height: 120px;
+}
+#expertise_and_technical_skill_section .expertise-technical-tab .nav-link.active {
+  color: #6E61B7;
+  font-weight: 600;
+}
+#expertise_and_technical_skill_section .expertise-technical-tab button.active:before {
+  content: "";
+  position: absolute;
+  background: #6E61B7;
+  height: 4px;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+}
+
+.tab-content .expertise-technical-tab-contents {
+  margin-top: 40px;
+}
+.tab-content .expertise-technical-tab-contents .expertise-technical-tab-title-contents p {
+  line-height: 40px;
+  margin-bottom: 50px;
+}
+.tab-content .expertise-technical-tab-contents .expertise-technical-tab-title-contents .technology-image img {
+  margin-right: 25px;
+}
+.tab-content .expertise-technical-tab-contents .expertise-technical-tab-contents-slider .technical-image .item img {
+  border-radius: 25px;
+}
+
+.development-methodoogy-title {
+  text-align: center;
+}
+
+@media screen and (max-width: 1600px) {
+  .expertise-technical-tab-main-title {
+    margin-bottom: 30px !important;
+  }
+}
+@media screen and (max-width: 1440px) {
+  #why_web_application_section {
+    margin-bottom: 80px !important;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .development-methodoogy-box {
+    min-height: 250px !important;
+  }
+}
+@media screen and (max-width: 1090px) {
+  .development-methodoogy-box {
+    min-height: 270px !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .expertise-technical-tab-main-title {
+    margin-bottom: 20px !important;
+  }
+  .development-methodoogy-box {
+    min-height: 370px !important;
+  }
+  .why-web-application-contents {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .expertise-technical-tab-title-contents {
+    text-align: center;
+  }
+  .expertise-technical-tab-title-contents .technology-image {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .expertise-technical-tab-title-contents .technology-image img {
+    margin-right: 0 !important;
+  }
+  .development-methodoogy-box {
+    min-height: auto !important;
+  }
+  .about-web-application {
+    padding: 20px !important;
+  }
+  .development-methodoogy-box h3 {
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .web-application-features .item img {
+    width: 40px !important;
+  }
+}

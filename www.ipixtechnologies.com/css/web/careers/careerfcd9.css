@@ -1,0 +1,582 @@
+/**
+ * Owl Carousel v2.2.1
+ * Copyright 2013-2017 Saurabh Sharma
+ * Licensed under  ()
+ */
+/*
+ *  Owl Carousel - Core
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1; }
+  .owl-carousel .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+    -moz-backface-visibility: hidden;
+    /* fix firefox animation glitch */ }
+  .owl-carousel .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  .owl-carousel .owl-wrapper,
+  .owl-carousel .owl-item {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0); }
+  .owl-carousel .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; }
+  .owl-carousel .owl-item img {
+    display: block;
+    width: 100%; }
+  .owl-carousel .owl-nav.disabled,
+  .owl-carousel .owl-dots.disabled {
+    display: none; }
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next,
+  .owl-carousel .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-loaded {
+    display: block; }
+  .owl-carousel.owl-loading {
+    opacity: 0;
+    display: block; }
+  .owl-carousel.owl-hidden {
+    opacity: 0; }
+  .owl-carousel.owl-refresh .owl-item {
+    visibility: hidden; }
+  .owl-carousel.owl-drag .owl-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+  .owl-carousel.owl-grab {
+    cursor: move;
+    cursor: grab; }
+  .owl-carousel.owl-rtl {
+    direction: rtl; }
+  .owl-carousel.owl-rtl .owl-item {
+    float: right; }
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block; }
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.owl-carousel .animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in {
+  z-index: 0; }
+
+.owl-carousel .owl-animated-out {
+  z-index: 1; }
+
+.owl-carousel .fadeOut {
+  animation-name: fadeOut; }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*
+ * 	Owl Carousel - Auto Height Plugin
+ */
+.owl-height {
+  transition: height 500ms ease-in-out; }
+
+/*
+ * 	Owl Carousel - Lazy Load Plugin
+ */
+.owl-carousel .owl-item .owl-lazy {
+  opacity: 0;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-item img.owl-lazy {
+  transform-style: preserve-3d; }
+
+/*
+ * 	Owl Carousel - Video Plugin
+ */
+.owl-carousel .owl-video-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000; }
+
+.owl-carousel .owl-video-play-icon {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: url(../../../images/vendor/owl.carousel2/dist/owl.video.playc1fa.png?7f01b07148f205f6e8258e92bbf652d9) no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  transition: transform 100ms ease; }
+
+.owl-carousel .owl-video-play-icon:hover {
+  transform: scale(1.3, 1.3); }
+
+.owl-carousel .owl-video-playing .owl-video-tn,
+.owl-carousel .owl-video-playing .owl-video-play-icon {
+  display: none; }
+
+.owl-carousel .owl-video-tn {
+  opacity: 0;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: opacity 400ms ease; }
+
+.owl-carousel .owl-video-frame {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%; }
+
+body {
+  background: #FAFAFD;
+}
+
+#join_us_section .join-us-title h3 {
+  margin-bottom: 25px;
+  font-size: 36px;
+}
+#join_us_section .join-us-title-contents {
+  align-items: center;
+  justify-content: space-between;
+}
+#join_us_section .join-us-title-contents p {
+  line-height: 31px;
+  margin: 0;
+}
+#join_us_section .join-us-title-contents a {
+  font-size: 14px;
+}
+
+#career_page_job_section .career-job-vacancy {
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  position: relative;
+  /* Add relative positioning */
+}
+#career_page_job_section .career-job-vacancy::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.5px;
+  background-color: #000000;
+  transition: width 0.3s ease-in-out;
+  bottom: 0;
+  left: 0;
+}
+#career_page_job_section .career-job-vacancy:hover::after {
+  width: 100%;
+}
+#career_page_job_section .career-job-details {
+  margin: 20px 0;
+  transition: 0.5s;
+}
+#career_page_job_section .career-job-details h3 {
+  font-size: 24px;
+}
+#career_page_job_section .career-job-details p {
+  line-height: 30px;
+  margin: 0;
+}
+#career_page_job_section .career-job-vacancy:hover .career-job-details {
+  padding-left: 30px;
+}
+#career_page_job_section .career-job-arrow-image {
+  padding-left: 50px;
+}
+#career_page_job_section .career-job-arrow-image img {
+  width: auto !important;
+  max-width: none;
+}
+
+#our_values_section h3 {
+  font-size: 36px;
+}
+#our_values_section p {
+  line-height: 30px;
+  margin: 0;
+}
+
+#career_page_qualities_section .career-quality-contents img {
+  margin-bottom: 10px;
+}
+
+#colleagues_section {
+  background-color: #07162D;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+#colleagues_section .colleagues-contents h5 {
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.modal-content {
+  border-radius: 20px !important;
+}
+.modal-content h2 {
+  font-size: 24px;
+}
+
+.modal-body {
+  padding-bottom: 0;
+}
+.modal-body .form-control.form-control-solid {
+  padding: 10px !important;
+  font-size: 14px;
+}
+
+.modal-footer {
+  border: none;
+}
+.modal-footer .btn.btn-primary {
+  background-color: #07162D;
+  padding: 7px 20px !important;
+  color: #fff;
+  transition: 0.2s;
+}
+.modal-footer .btn.btn-primary:hover {
+  background-color: #897ADA !important;
+  padding: 7px 25px !important;
+  color: #fff;
+}
+
+.our-strength-title h2 {
+  font-size: 40px;
+}
+
+/* ======ANIMATION============== */
+.roll-smooth {
+  transition: transform 0.9s ease;
+}
+
+.career-title-content {
+  transition: transform 0.5s ease;
+}
+.career-title-content svg {
+  width: 100%;
+}
+
+@keyframes anim-roll-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(70deg);
+  }
+}
+.roll-1 {
+  transform-origin: 33.3547px 269.204px;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
+}
+
+.career-title-content:hover .roll-1 {
+  transform: rotate(70deg);
+}
+
+@keyframes anim-roll-3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-40deg);
+  }
+}
+.roll-3 {
+  transform-origin: 660.016px 272.741px;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
+}
+
+.career-title-content:hover .roll-3 {
+  transform: rotate(-40deg);
+}
+
+@keyframes anim-roll-4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+.roll-4 {
+  transform-origin: 191.067px 47.8545px;
+  transition: transform 0.5s ease;
+  transform: rotate(0deg);
+}
+
+.career-title-content:hover .roll-4 {
+  transform: rotate(40deg);
+}
+
+.career-title-content:hover .roll-2 {
+  transform: translateY(-15px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-5 {
+  transform: translateX(-15px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-15 {
+  transform: translateX(-15px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-16 {
+  transform: translateY(-10px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-17 {
+  transform: translateY(10px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-18 {
+  transform: translateX(20px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-6 {
+  transform: translateY(10px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-7 {
+  transform: translateY(-20px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-8 {
+  transform: translateX(20px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-9 {
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+
+.career-title-content:hover .roll-12 {
+  transform: translateX(-3px);
+  transition: transform 0.5s ease;
+}
+
+/* HEAD====== */
+@keyframes anim-roll-10 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+.roll-10 {
+  transform-origin: 26% 50%;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.career-title-content:hover .roll-10 {
+  transform: rotate(-10deg);
+}
+
+@keyframes anim-roll-11 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(11deg);
+  }
+}
+.roll-11 {
+  transform-origin: 50% 40%;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.career-title-content:hover .roll-11 {
+  transform: rotate(11deg);
+}
+
+/* HEAD====== */
+.roll-1,
+.roll-3,
+.roll-4,
+.roll-10,
+.roll-11 {
+  transition: transform 0.5s ease;
+}
+
+.share-resume-btn:hover img {
+  transform: translateX(135px) !important;
+}
+
+.blog-details-recent-post h2 {
+  font-size: 24px;
+}
+.blog-details-recent-post .item img {
+  border-radius: 30px;
+  width: 100%;
+  margin: 20px 0;
+}
+.blog-details-recent-post .item h3 {
+  font-size: 18px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-details-recent-post .item p {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 24px;
+}
+.blog-details-recent-post .item p span {
+  color: #5D6F8A;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1440px) {
+  .career-title-content .home-btn button:hover img {
+    transform: translateX(90px) !important;
+  }
+}
+@media screen and (max-width: 991px) {
+  .our-strength-title h2 {
+    font-size: 36px !important;
+  }
+  .colleagues-contents h5 {
+    font-size: 28px !important;
+  }
+  .career-job-details:hover {
+    padding-left: 0 !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .home-btn {
+    display: flex;
+    justify-content: center;
+  }
+  .our-strength-col {
+    text-align: center;
+  }
+  .career-title-content {
+    text-align: center;
+  }
+  #career_page_job_section {
+    margin-top: 20px !important;
+  }
+  #career_page_job_section .career-job-details {
+    margin-top: 0 !important;
+  }
+  .join-us-title h3 {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+  }
+  .career-form-input-col {
+    margin-bottom: 10px !important;
+  }
+  .form-label {
+    display: none;
+  }
+  .modal-body .form-control.form-control-solid {
+    padding: 10px 10px !important;
+    font-size: 11px;
+  }
+  .our-strength-title h2 {
+    font-size: 28px !important;
+  }
+  #career_page_qualities_section .career-quality-contents {
+    text-align: center !important;
+  }
+  .colleagues-contents h5 {
+    font-size: 24px !important;
+  }
+  #career_page_job_section .career-job-details h3 {
+    font-size: 16px !important;
+  }
+  #our_values_section h3 {
+    font-size: 25px !important;
+  }
+  .owl-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .owl-dot.active {
+    background-color: #897ADA;
+  }
+  .owl-dot {
+    background-color: rgba(137, 122, 218, 0.2901960784);
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .career-animation {
+    display: none;
+  }
+  .our-strength-title h2 {
+    font-size: 20px !important;
+  }
+  input.form-control.form-control-solid {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .career-job-arrow-image {
+    padding-left: 20px !important;
+  }
+  .colleagues-contents h5 {
+    font-size: 18px !important;
+  }
+}
